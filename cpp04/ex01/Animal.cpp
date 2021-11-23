@@ -23,8 +23,6 @@ Animal::~Animal(void)
 
 Animal & Animal::operator=(const Animal &rhs)
 {
-	if(this == &rhs)
-		return (*this);
 	std::cout << "Assignation" << std::endl;
 	this->_type = rhs._type;
 	return (*this);

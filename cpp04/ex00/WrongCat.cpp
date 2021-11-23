@@ -4,7 +4,7 @@ WrongCat::WrongCat(void): WrongAnimal("WrongCat")
 {
 	std::cout << "WrongCat constructor" << std::endl;
 }
-WrongCat::WrongCat(const WrongCat &src)
+WrongCat::WrongCat(const WrongCat &src): WrongAnimal(src)
 {
 	std::cout << "WrongCat constructor copy" << std::endl;
 	*this = src;

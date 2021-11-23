@@ -1,7 +1,7 @@
-NAME = Animal
-SRC = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+NAME = AAnimal
+SRC = AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+INCLUDES = AAnimal.hpp Cat.hpp Dog.hpp Brain.hpp 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME} 

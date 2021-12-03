@@ -53,6 +53,8 @@ void identify(Base & p)
 	catch(const std::exception &e) {}
 }
 
+#include <stdlib.h>
+
 int main()
 {
 	std::srand(std::time(nullptr));
@@ -61,5 +63,6 @@ int main()
 		return 1;
 	identify(base);
 	identify(*base);
+	delete base;
 	return(0);
 }

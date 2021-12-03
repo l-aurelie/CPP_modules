@@ -1,8 +1,8 @@
-NAME = identify
-SRC = main.cpp
+NAME = serialize
+SRC = main.cpp Data.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Base.hpp A.hpp B.hpp C.hpp
-FLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+INCLUDES = Data.hpp
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
 
 all: ${NAME} 
 

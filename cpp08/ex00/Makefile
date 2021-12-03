@@ -1,7 +1,7 @@
-NAME = identify
+NAME = easyfind
 SRC = main.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Base.hpp A.hpp B.hpp C.hpp
+INCLUDES = easyfind.hpp
 FLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic-errors
 
 all: ${NAME} 

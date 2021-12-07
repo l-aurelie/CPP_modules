@@ -2,9 +2,8 @@
 
 int	main()
 {
-	Span span(2);
-	
-	span.printVector();
+	std::cout << "============Test span" << std::endl;
+	Span span(4);
 	try
 	{
 		span.addNumber(5);
@@ -19,18 +18,36 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 	span.printVector();
+	std::cout << "longest span = " << span.longestSpan() << std::endl;
 
+
+	std::cout << "============Test span2" << std::endl;
 	Span span2(20);
-	
-	span.printVector();
 	try
 	{
 		span2.setRange(1, 20);
+		span2.printVector();
+		std::cout << "longest span = " << span2.longestSpan() << std::endl;
 	}
 	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	span2.printVector();
+
+
+
+	std::cout << "============Test span3" << std::endl;
+	Span span3(1);
+	try
+	{
+		span3.addNumber(5);
+		span3.printVector();
+		std::cout << "longest" << std::endl;
+		std::cout << "longest span = " << span3.longestSpan() << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }

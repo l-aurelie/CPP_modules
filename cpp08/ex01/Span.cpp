@@ -23,7 +23,7 @@ Span &Span::operator=(const Span &rhs)
 
 void Span::addNumber(const int to_add)
 {
-	if(_vector.size() + 1 < _max_size)
+	if(_vector.size() + 1 <= _max_size)
 	{
 		_vector.push_back(to_add);
 	}
@@ -39,8 +39,21 @@ void Span::setRange(int min, int max)
 
 int Span::shortestSpan()
 {
-	return 0;
+	if(_vector.size() < 2)
+		throw NoSpanToFind();
+	int shortest = 0;
+	std::vecor<int>::iterator it = _vector.begin();
+	std::vecor<int>::iterator jt = _vector.begin()++;
+	for(; it != _vector.end() ; it++)
+	{
+		for(; jt != _vector.end() ; jt++)
+		{
+			
+		}
+
+	}
 }
+
 int Span::longestSpan()
 {
 	if(_vector.size() < 2)
@@ -64,8 +77,10 @@ int Span::longestSpan()
 
 void Span::printVector()
 {
+	std::cout << "Vector : " << std::endl;
 	for(size_t i = 0; i < _vector.size(); i++)
-		std::cout << _vector[i] << std::endl;
+		std::cout << _vector[i] << " | ";
+	std::cout << std::endl;
 }
 
 

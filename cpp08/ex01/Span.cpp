@@ -1,4 +1,6 @@
 #include "Span.hpp"
+#include <cmath>
+#include <climits>
 
 Span::Span(const unsigned int N): _max_size(N)
 {}
@@ -39,19 +41,30 @@ void Span::setRange(int min, int max)
 
 int Span::shortestSpan()
 {
+	//std::cout << "shortest" << std::endl;
 	if(_vector.size() < 2)
 		throw NoSpanToFind();
-	int shortest = 0;
-	std::vecor<int>::iterator it = _vector.begin();
-	std::vecor<int>::iterator jt = _vector.begin()++;
-	for(; it != _vector.end() ; it++)
+	int shortest = INT_MAX;
+	for(std::vector<int>::iterator it = _vector.begin(); it != _vector.end() ; it++)
 	{
-		for(; jt != _vector.end() ; jt++)
+		for(std::vector<int>::iterator jt = _vector.begin(); jt != _vector.end() ; jt++)
 		{
-			
+	//		std::cout << *it << " | " << *jt << std::endl;
+			if(it == jt)
+			{
+	//			std::cout << "increment j" << std::endl;
+				jt++;
+				if(jt == _vector.end())
+					break;
+			}
+			if(abs(*it - *jt) < shortest)
+			{
+				shortest = abs(*it - *jt);
+	//			std::cout << "shortest = " << shortest << std::endl;
+			}
 		}
-
 	}
+	return(shortest);
 }
 
 int Span::longestSpan()

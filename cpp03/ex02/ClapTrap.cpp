@@ -11,7 +11,7 @@ ClapTrap::ClapTrap(const std::string &name): _name(name), _hitpoint(10), _energy
 	std::cout << "Constructor, init name" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &src)
+ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	std::cout << "Constructor, copy" << std::endl;
 	*this = src;
@@ -24,7 +24,7 @@ ClapTrap::~ClapTrap()
 
 /***********************************************************/
 
-ClapTrap & ClapTrap::operator=(ClapTrap const &rhs)
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 {
 	if (this == &rhs)
 		return (*this);
@@ -39,7 +39,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &rhs)
 /***********************************************************/
 
 
-void ClapTrap::attack(std::string const & target)
+void ClapTrap::attack(const std::string &target)
 {
 	if (this->_energy_point <= 0)
 	{

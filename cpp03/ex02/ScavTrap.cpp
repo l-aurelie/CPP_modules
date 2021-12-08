@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(const std::string &name): ClapTrap(name)
 	this->_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src)
+ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
 {
 	std::cout << "ScavTrap Constructor, copy" << std::endl;
 	*this = src;
@@ -30,7 +30,7 @@ ScavTrap::~ScavTrap()
 
 /***********************************************************/
 
-ScavTrap & ScavTrap::operator=(ScavTrap const &rhs)
+ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
 {
 	if (this == &rhs)
 		return (*this);
@@ -42,7 +42,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &rhs)
 
 /***********************************************************/
 
-void ScavTrap::attack(std::string const & target)
+void ScavTrap::attack(const std::string &target)
 {
 	std::cout << "ScavTrap : ";
 	ClapTrap::attack(target);

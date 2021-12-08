@@ -39,9 +39,25 @@ void Span::setRange(int min, int max)
 		addNumber(min);
 }
 
+void Span::setRange(std::vector<int>::iterator it, std::vector<int>::iterator ite)
+{
+	for ( ; it != ite ; it++)
+		addNumber(*it);
+}
+
+void Span::printVector()
+{
+	std::cout << "Vector : " << std::endl;
+	for(size_t i = 0; i < _vector.size(); i++)
+		std::cout << _vector[i] << " | ";
+	std::cout << std::endl;
+}
+
+/*********************************************/
+
+
 int Span::shortestSpan()
 {
-	//std::cout << "shortest" << std::endl;
 	if(_vector.size() < 2)
 		throw NoSpanToFind();
 	int shortest = INT_MAX;
@@ -49,19 +65,14 @@ int Span::shortestSpan()
 	{
 		for(std::vector<int>::iterator jt = _vector.begin(); jt != _vector.end() ; jt++)
 		{
-	//		std::cout << *it << " | " << *jt << std::endl;
 			if(it == jt)
 			{
-	//			std::cout << "increment j" << std::endl;
 				jt++;
 				if(jt == _vector.end())
 					break;
 			}
 			if(abs(*it - *jt) < shortest)
-			{
 				shortest = abs(*it - *jt);
-	//			std::cout << "shortest = " << shortest << std::endl;
-			}
 		}
 	}
 	return(shortest);
@@ -88,16 +99,8 @@ int Span::longestSpan()
 	return max - min;
 }
 
-void Span::printVector()
-{
-	std::cout << "Vector : " << std::endl;
-	for(size_t i = 0; i < _vector.size(); i++)
-		std::cout << _vector[i] << " | ";
-	std::cout << std::endl;
-}
-
-
 /*********************************************/
+
 
 const char *Span::NotEnoughSpace::what() const throw()
 {

@@ -16,7 +16,7 @@ FragTrap::FragTrap(const std::string &name): ClapTrap(name)
 	this->_attack_damage = 30;
 }
 
-FragTrap::FragTrap(FragTrap const &src): ClapTrap(src)
+FragTrap::FragTrap(const FragTrap &src): ClapTrap(src)
 {
 	std::cout << "FragTrap Constructor, copy" << std::endl;
 	*this = src;
@@ -30,7 +30,7 @@ FragTrap::~FragTrap()
 
 /***********************************************************/
 
-FragTrap & FragTrap::operator=(FragTrap const &rhs)
+FragTrap &FragTrap::operator=(const FragTrap &rhs)
 {
 	if (this == &rhs)
 		return (*this);

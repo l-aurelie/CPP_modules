@@ -14,7 +14,7 @@ DiamondTrap::DiamondTrap(const std::string &name): ClapTrap(name), ScavTrap(name
 	ScavTrap::setInitialEnergy();
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &src): ClapTrap(src), ScavTrap(src), FragTrap(src), _name(src._name)
+DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), ScavTrap(src), FragTrap(src), _name(src._name)
 
 {
 	std::cout << "DiamondTrap Constructor, copy" << std::endl;
@@ -30,7 +30,7 @@ DiamondTrap::~DiamondTrap()
 
 /***********************************************************/
 
-DiamondTrap & DiamondTrap::operator=(DiamondTrap const &rhs)
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs)
 {
 	if (this == &rhs)
 		return (*this);

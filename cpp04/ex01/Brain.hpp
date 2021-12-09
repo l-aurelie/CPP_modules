@@ -5,7 +5,7 @@
 #include <string>
 
 class Brain{
-	public:
+public:
 	Brain(void);
 	Brain(const std::string idea[100]);
 	Brain(const Brain &src);
@@ -17,7 +17,7 @@ class Brain{
 	void	setIdea(int index, std::string new_idea);
 	void 	print_brain_content() const;
 
-	protected:
+private:
 	std::string _idea[100];
 };
 

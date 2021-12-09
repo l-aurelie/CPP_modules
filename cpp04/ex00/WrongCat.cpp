@@ -20,6 +20,8 @@ WrongCat::~WrongCat(void)
 WrongCat & WrongCat::operator=(const WrongCat &rhs)
 {
 	std::cout << "Assignation" << std::endl;
+	if(this == &rhs)
+		return (*this);
 	WrongAnimal::operator=(rhs);
 	return (*this);
 }

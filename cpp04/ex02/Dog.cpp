@@ -1,6 +1,5 @@
 #include "Dog.hpp"
 
-
 Dog::Dog(void): AAnimal("Dog"), _brain(new Brain())
 {
 	std::cout << "Dog constructor" << std::endl;

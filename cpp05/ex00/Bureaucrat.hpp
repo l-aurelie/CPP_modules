@@ -1,35 +1,40 @@
+
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
 #include <exception>
 #include <iostream>
-#define MAX_GRADE 1
+
 #define MIN_GRADE 150
+#define MAX_GRADE 1
 
-class Bureaucrat{
+class Bureaucrat {
 public:
-	class gradeToHighException: public std::exception
-	{
-	public:
-		const char *what() const throw();
-	};
-	class gradeToLowException: public std::exception
-	{
-	public:	
-		const char *what() const throw();
-	};
-	
-	Bureaucrat(const std::string & name, int grade)
+	Bureaucrat(const std::string &name = "default", int grade = MIN_GRADE);
 	Bureaucrat(Bureaucrat &src);
-	~Bureaucrat();
+	~Bureaucrat(void);
 
-	Bureaucrat &operator=(const Bureaucrat &rhs);
+	const std::string &getName(void) const;
+	int getGrade(void) const;
+	void incrementGrade(void);
+	void decrementGrade(void);
 
-	const std::string  &getName() const;
-	int getGrade() const;
-	void incGrade();
-	void decGrade();
+	class gradeTooHighException: public std::exception {
+		public:
+			const char *what(void) const throw();
+	};
+	class gradeTooLowException: public std::exception {
+		public:
+			const char *what(void) const throw();
+	};
 
 private:
 	const std::string _name;
-	int _grade; //1 a 150
+	int _grade;
+
+	Bureaucrat &operator=(const Bureaucrat &rhs);
 };
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs);
+
+#endif

@@ -1,50 +1,50 @@
-#ifndef CONVERT_HPP 
+
+#ifndef CONVERT_HPP
 #define CONVERT_HPP
 
-#include <iostream>
+#include <cmath>
 #include <iomanip>
+#include <iostream>
 #include <limits>
 #include <sstream>
-#include <cmath>
 
-class Convert {
+#define NB_CONV 4
+
+class Convert
+{
 public:
 	Convert(const Convert &src);
-	Convert(const std::string &literal_value);
-	~Convert();
+	Convert(const std::string &input_value);
 
-	void print();
+	~Convert(void);
+
+	void print(void);
 
 	Convert &operator=(const Convert &rhs);
 
 private:
-	Convert();
+	std::string input_value;
+	int i;
+	char c;
+	float f;
+	double d;
+	bool input_val_error;
 
-	std::string _literal_value;
+	Convert(void);
 
-	bool _literal_error;
-
-	int _i;
-	char _c;
-	float _f;
-	double _d;
-
-	bool isChar();
-	bool isInt();
-	bool isFloat();
-	bool isDouble();
-
-	void setConv();
-
-	void setFromChar();
-	void setFromInt();
-	void setFromFloat();
-	void setFromDouble();
-
-	void printChar() const;
-	void printInt() const;
-	void printFloat() const;
-	void printDouble() const;
+	bool isChar(void);
+	bool isInt(void);
+	bool isFloat(void);
+	bool isDouble(void);
+	void setConv(void);
+	void setFromChar(void);
+	void setFromInt(void);
+	void setFromFloat(void);
+	void setFromDouble(void);
+	void printChar(void) const;
+	void printInt(void) const;
+	void printFloat(void) const;
+	void printDouble(void) const;
 };
 
 #endif

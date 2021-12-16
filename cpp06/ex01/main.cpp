@@ -1,23 +1,33 @@
+
 #include <iostream>
-#include "Data.hpp"
-#include <cstdint>
+#include <stdint.h>
 
-uintptr_t serialize(Data *ptr)
+struct Data
 {
-	return(reinterpret_cast<uintptr_t>(ptr));
+	int nb;
+	char c;
+	std::string str;
+	float float_nb;
+	double double_nb;
+};
+
+void print_data(Data *data)
+{
+	std::cout << data->nb << " | " << data->c <<  " | " << data->str <<  " | " << data->float_nb << " | " << data->double_nb << std::endl;
 }
 
-Data* deserialize(uintptr_t raw)
-{
-	return(reinterpret_cast<Data*>(raw));
-}
+uintptr_t serialize(Data* ptr) { return (reinterpret_cast<uintptr_t>(ptr)); }
 
-int main()
-{
-	Data data('1', "coucou", 2, 3.0f, 4.0);
+Data* deserialize(uintptr_t raw) { return (reinterpret_cast<Data*>(raw)); }
 
-	std::cout << data << std::endl;
-	std::cout << "serialize return = " << serialize(&data) << std::endl;
-	std::cout << *deserialize(serialize(&data)) << std::endl;
+int main(void) {
+	Data data = {300, 'a', "Hello_world", 12.2f, 16.4};
+
+	print_data(&data);
+	std::cout << "serialize = " << serialize(&data) << std::endl; 
+
+	std::cout << "deserialize = ";
+	print_data(deserialize(serialize(&data)));
+
 	return 0;
 }

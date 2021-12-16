@@ -1,8 +1,10 @@
+
+
 NAME = identify
 SRC = main.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Base.hpp A.hpp B.hpp C.hpp
-FLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+INCLUDES = Base.hpp C.hpp B.hpp A.hpp
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME} 
 

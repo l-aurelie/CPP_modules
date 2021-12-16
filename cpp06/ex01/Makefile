@@ -1,8 +1,10 @@
-NAME = serialize
-SRC = main.cpp Data.cpp
+
+
+NAME = serialize 
+SRC = main.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Data.hpp
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+INCLUDES =
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME} 
 

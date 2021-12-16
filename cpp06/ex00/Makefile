@@ -1,8 +1,9 @@
-NAME = convert
-SRC = main.cpp Convert.cpp
+
+NAME = Convert
+SRC = Convert.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
 INCLUDES = Convert.hpp
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME} 
 

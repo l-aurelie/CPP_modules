@@ -1,9 +1,8 @@
 
-
-NAME = template
+NAME = iter
 SRC = Fixed.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Fixed.hpp whatever.hpp
+INCLUDES = Fixed.hpp iter.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME} 

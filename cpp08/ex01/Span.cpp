@@ -17,6 +17,7 @@ Span &Span::operator=(const Span &rhs)
 	if(this == &rhs)
 		return(*this);
 	this->_vector = rhs._vector;
+	this->_max_size = rhs._max_size;
 	return(*this);
 }
 
@@ -56,7 +57,7 @@ void Span::printVector()
 /*********************************************/
 
 
-int Span::shortestSpan()
+unsigned int Span::shortestSpan()
 {
 	if(_vector.size() < 2)
 		throw NoSpanToFind();
@@ -78,7 +79,7 @@ int Span::shortestSpan()
 	return(shortest);
 }
 
-int Span::longestSpan()
+unsigned int Span::longestSpan()
 {
 	if(_vector.size() < 2)
 		throw NoSpanToFind();

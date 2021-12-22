@@ -22,6 +22,7 @@ int	main()
 	std::cout << "shortest span = " << span.shortestSpan() << std::endl;
 
 
+
 	std::cout << "============Test span2" << std::endl;
 	Span span2(20);
 	try
@@ -54,10 +55,9 @@ int	main()
 
 
 
-	
 	std::cout << "============Test span4" << std::endl;
-	std::vector<int> ref(12000, 12);
-//	std::vector<int> ref(12001, 12);
+//	std::vector<int> ref(12000, 12);
+	std::vector<int> ref(12001, 12);
 	Span span4(12000);
 	try
 	{

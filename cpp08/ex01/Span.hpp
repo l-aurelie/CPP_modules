@@ -18,8 +18,8 @@ public:
 	void setRange(std::vector<int>::iterator it, std::vector<int>::iterator ite);
 	void printVector();
 
-	int shortestSpan();
-	int longestSpan();
+	unsigned int shortestSpan();
+	unsigned int longestSpan();
 
 	class NotEnoughSpace : public std::exception
 	{

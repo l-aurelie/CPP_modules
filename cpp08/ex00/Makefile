@@ -2,8 +2,7 @@ NAME = easyfind
 SRC = main.cpp
 OBJ = ${SRC:.cpp=.o}
 INCLUDES = easyfind.hpp
-FLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic-errors
-
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 all: ${NAME} 
 
 %.o: %.cpp ${INCLUDES}

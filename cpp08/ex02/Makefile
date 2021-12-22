@@ -1,8 +1,8 @@
-NAME = span
-SRC = main.cpp Span.cpp
+NAME = mutanStack
+SRC = main.cpp MutantStack.cpp
 OBJ = ${SRC:.cpp=.o}
-INCLUDES = Span.hpp
-FLAGS = -g -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+INCLUDES = MutantStack.hpp
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 
 all: ${NAME} 
 

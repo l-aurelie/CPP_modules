@@ -8,7 +8,7 @@
 int main()
 {
 	std::cout << "test vector=========" << std::endl;
-	int to_find = 2;
+	int to_find = 5;
 	std::vector<int> vector(4, 2);
 	std::vector<int>::iterator it;
 
